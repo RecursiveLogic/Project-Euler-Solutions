@@ -1,4 +1,1 @@
-sumMultiples :: Integer -> Integer
-sumMultiples x = sum [ y | y <- [1..x], mod y 3 == 0 || mod y 5 == 0 ]
-
-main = print (sumMultiples 999)
+main = print (sum [ x | x <- [1..999], mod x 3 == 0 || mod x 5 == 0 ])

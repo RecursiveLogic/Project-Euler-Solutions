@@ -8,10 +8,10 @@ function palindrome(number) {
     return true;
 }
 
-function largestPalindrome() {
+function largestPalindrome(num) {
     var max = 0;
-    for (var i = 100; i < 1000; ++i) {
-        for (var j = i; j < 1000; ++j) {
+    for (var i = 100; i < num; ++i) {
+        for (var j = i; j < num; ++j) {
             var product = i * j;
             if (palindrome(product)) {
                 if (product > max) {
@@ -23,4 +23,4 @@ function largestPalindrome() {
     return max;
 }
 
-console.log(largestPalindrome());
+console.log(largestPalindrome(1000));
