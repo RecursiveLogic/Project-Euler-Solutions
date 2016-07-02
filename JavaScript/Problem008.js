@@ -1,19 +1,19 @@
-var fs = require('fs');
-var file = fs.readFileSync('euler.txt', { encoding: 'UTF-8' });
-var data = file.split("\n").join('');
+const fs = require('fs')
+const file = fs.readFileSync('euler.txt', 'UTF8')
+const data = file.split("\n").join('')
 
-function getMaxProduct(array) {
-    var maxProduct = 0;
+const Euler008 = (array) => {
+    let maxProduct = 0
     for (var i = 0; i < array.length; ++i) {
-        var product = 1;
-        for (var j = i; j < i + 13; ++j) {
-            product *= array[j];
+        let product = 1
+        for (let j = i; j < i + 13; ++j) {
+            product *= array[j]
         }
         if (product > maxProduct) {
-            maxProduct = product;
+            maxProduct = product
         }
     }
-    return maxProduct;
+    return maxProduct
 }
 
-console.log(getMaxProduct(data));
+console.log(Euler008(data))

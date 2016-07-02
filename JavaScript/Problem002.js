@@ -1,15 +1,15 @@
-function sumEvenFibo(num) {
-    var fib1 = 1, fib2 = 2;
-    var sum = 2;
-    for (var i = fib1; fib1 < num; ++i) {
-        var fib = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = fib;
+const Euler002 = (num) => {
+    let fib1 = 1, fib2 = 2
+    let sum = 2
+    for (let i = fib1; fib1 < num; ++i) {
+        let fib = fib1 + fib2
+        fib1 = fib2
+        fib2 = fib
         if (fib % 2 == 0) {
-            sum += fib;
+            sum += fib
         }
     }
-    return sum;
+    return sum
 }
 
-console.log(sumEvenFibo(4000000));
+console.log(Euler002(4000000))

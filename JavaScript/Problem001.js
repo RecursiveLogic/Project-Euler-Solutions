@@ -1,11 +1,11 @@
-function sumMultiples(num) {
-    var sum = 0;
-    for (var i = 1; i < num; ++i) {
+const Euler001 = (num) => {
+    let sum = 0
+    for (let i = 1; i < num; ++i) {
         if (i % 3 == 0 || i % 5 == 0) {
-            sum += i;
+            sum += i
         }
     }
-    return sum;
+    return sum
 }
 
-console.log(sumMultiples(1000));
+console.log(Euler001(1000))

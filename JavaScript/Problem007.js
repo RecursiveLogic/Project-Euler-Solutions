@@ -1,27 +1,27 @@
-function isPrime(num) {
-    var isPrime = true;
+const isPrime = (num) => {
+    let isPrime = true
     if (num == 2 || num == 3) {
-        return true;
+        return true
     }
-    for (var i = 2; i < num; ++i) {
+    for (let i = 2; i < num; ++i) {
         if (num % i == 0) {
-            isPrime = false;
-            break;
+            isPrime = false
+            break
         }
     }
-    return isPrime;
+    return isPrime
 }
 
-function getNthPrime(num) {
-    var i = 0;
-    var j = 0; 
+const Euler007 = (num) => {
+    let i = 0
+    let j = 0
     while (i <= num) {
-        ++j;
+        ++j
         if (isPrime(j)) {
-            ++i;
+            ++i
         }
     }
-    return j;
+    return j
 }
 
-console.log(getNthPrime(10001));
+console.log(Euler007(10001))

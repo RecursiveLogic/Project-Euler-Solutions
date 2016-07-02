@@ -1,15 +1,15 @@
-function largestPrimeFactor(num) {
-    var factor = 0;
-    var div = 2;
+const Euler003 = (num) => {
+    let factor = 0
+    let div = 2
     while (div <= num) {
         if (num % div == 0) {
-            factor = div;
-            num /= div;
+            factor = div
+            num /= div
         } else {
-            ++div;
+            ++div
         }
     }
-    return factor;
+    return factor
 }
 
-console.log(largestPrimeFactor(600851475143));
+console.log(Euler003(600851475143))

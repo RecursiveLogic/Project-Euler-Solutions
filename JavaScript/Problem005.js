@@ -1,27 +1,27 @@
-function getPrimes(num) {
-    var primes = [];
-    for (var i = 2; i <= num; ++i) {
-        var isPrime = true;
-        for (var j = 2; j < i; ++j) {
+const getPrimes = (num) => {
+    let primes = []
+    for (let i = 2; i <= num; ++i) {
+        let isPrime = true
+        for (let j = 2; j < i; ++j) {
             if (i % j == 0) {
-                isPrime = false;
-                break;
+                isPrime = false
+                break
             }
         }
         if (isPrime) {
-            primes.push(i);
+            primes.push(i)
         }
     }
-    return primes;
+    return primes
 }
 
-function smallestMultiple(primes) {
-    var output = 1;
-    for (var i = 0; i < primes.length; ++i) {
-        var a = Math.floor(Math.log(20) / Math.log(primes[i]));
-        output *= Math.pow(primes[i], a);
+const Euler005 = (primes) => {
+    let output = 1
+    for (let i = 0; i < primes.length; ++i) {
+        let a = Math.floor(Math.log(20) / Math.log(primes[i]))
+        output *= Math.pow(primes[i], a)
     }
-    return output;
+    return output
 }
 
-console.log(smallestMultiple(getPrimes(20)));
+console.log(Euler005(getPrimes(20)))
