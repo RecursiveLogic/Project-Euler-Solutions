@@ -1,13 +1,5 @@
-(define (Euler001 (limit 1000))
-    (apply +
-        (for/list ([x (in-range 1000)]
-                #:when (or (= (modulo x 3) 0)
-                    (= (modulo x 5) 0)
-                )
-            )
-            x
-        )
-    )
-)
+#lang racket
 
-(Euler001)
+(apply +
+    (filter (lambda (x) (or (= (modulo x 3) 0) (= (modulo x 5) 0))) (range 1000))
+)
