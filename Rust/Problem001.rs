@@ -1,9 +1,7 @@
+fn problem_001(n: i32) -> i32 {
+    (0..n).filter(|x| x % 5 == 0 || x % 3 == 0).sum()
+}
+
 fn main() {
-    let mut sum = 0;
-    for x in 1..1000 {
-        if x % 3 == 0 || x % 5 == 0 {
-            sum += x;
-        }
-    }
-    println!("{}", sum);
+    println!("{:?}", problem_001(1000));
 }
