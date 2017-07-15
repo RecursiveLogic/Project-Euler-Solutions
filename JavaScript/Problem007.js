@@ -1,27 +1,31 @@
-const isPrime = (num) => {
-    let isPrime = true
-    if (num == 2 || num == 3) {
-        return true
+const isPrime = n => {
+  if (n < 2) {
+    return false
+  } else if (n < 4) {
+    return true
+  } else if (n % 2 == 0 || n % 3 == 0) {
+    return false
+  } else {
+    let div = 5
+    while (div * div <= n) {
+      if (n % div == 0 || n % (div + 2) == 0) {
+        return false
+      }
+      div += 6
     }
-    for (let i = 2; i < num; ++i) {
-        if (num % i == 0) {
-            isPrime = false
-            break
-        }
-    }
-    return isPrime
+    return true
+  }
 }
 
-const Euler007 = (num) => {
-    let i = 0
-    let j = 0
-    while (i <= num) {
-        ++j
-        if (isPrime(j)) {
-            ++i
-        }
+const solution = n => {
+  let i = 0, j = 0
+  while (i < n) {
+    ++j
+    if (isPrime(j)) {
+      ++i
     }
-    return j
+  }
+  return j
 }
 
-console.log(Euler007(10001))
+console.log(solution(10001))
